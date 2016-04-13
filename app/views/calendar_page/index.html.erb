@@ -1,0 +1,18 @@
+<h1> Device Calendar </h1>
+
+<div id="calendar">
+	<h2 id="month">
+		<%= link_to "<", date: @date.prev_month %>
+		<%= @date.strftime("%B %Y")%>
+		<%= link_to ">", date: @date.next_month %></h2>
+		<%= calendar @date do |date| %>
+		<%= date.day %>
+		<% if @devices_by_date[date] %>
+			<ul>
+				<% @devices_by_date[date].each do |device| %>
+				<li><%= link_to device.device_name, device %></li>
+			<% end %>
+		</ul>
+	<% end %>
+	<% end %>
+</div>

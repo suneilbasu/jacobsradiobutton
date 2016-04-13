@@ -1,0 +1,22 @@
+<h1>devices#index</h1>
+<%=link_to 'New Device',('../devices/new')%>
+<p>Find me in app/views/devices/index.html.erb</p>
+<%= link_to "Advanced Search", new_search_path %>
+<%= "📱"%> <%="💻"%> <%="⌨"%> <%="🖥" %>
+
+<table class="table1" >
+	<tr>
+		<th>Device Name  </th>
+		<th>Device Owner  </th>
+		<th>Device Type  </th>
+		<th>Edit  </th>
+
+	</tr>
+<% @devices.each do |n| %>
+	<td><%= link_to "#{n.device_name}",device_path(n) %> </td>
+<td><%= link_to "#{n.user.first_name}",user_path(n.user_id) %></td>
+	<td><%= link_to "#{n.device_type}",device_path(n) %> </td>
+	<td><%= link_to "Edit ", edit_device_path(n) %></td>
+</tr>
+<% end %>
+</table>

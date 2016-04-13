@@ -1,0 +1,35 @@
+<h1>Showing Account for <%=@user.first_name %><%=@user.last_name %> </h1>
+<table class="table2" >
+  <tbody>
+    <tr>
+       <td><b>first Name:</b></td>
+      <td><%= @user.first_name %></td>
+    </tr>
+    <tr>
+       <td><b>Last Name:</b></td>
+      <td><%= @user.last_name %></td>
+    </tr>
+    <tr>
+       <td><b>User's Role:</b></td>
+      <td><%= @user.role %></td>
+    </tr>
+    <tr>
+       <td><b>Office Location:</b></td>
+      <td><%= @user.office_location %></td>
+    </tr>
+    <tr>
+       <td><b>User Last signed in at:</b></td>
+      <td><%=@user.last_sign_in_at %></td>
+    </tr>
+    <tr>
+       <td><b>Last used IP address:</b></td>
+      <td><%=@user.last_sign_in_ip %></td>
+    </tr>
+    <tr>
+       <td><b>User changed :</b></td>
+      <td><%=@user.updated_at %></td>
+    </tr>
+</table>
+    <br><%= link_to "edit this record", edit_user_path(@user) %>
+
+  <br>  <%= "This user has the following devices"%>

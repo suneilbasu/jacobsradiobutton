@@ -1,0 +1,18 @@
+<h1>Users#index</h1>
+<p>Find me in app/views/users/index.html.erb</p>
+<table class="table1" >
+	<tr>
+		<th>First Name </th>
+		<th>Last Name </th>
+		<th>Email  </th>
+		<th>Edit  </th>
+
+	</tr>
+<% @users.each do |n| %>
+	<td><%= link_to "#{n.first_name}",user_path(n) %> </td>
+	<td><%= link_to "#{n.last_name}",user_path(n) %></td>
+	<td><%= link_to "#{n.email}",user_path(n) %></td>
+	<td><%= link_to "Edit ", edit_user_path(n) %></td>
+</tr>
+<% end %>
+</table>

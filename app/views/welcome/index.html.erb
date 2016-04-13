@@ -1,0 +1,12 @@
+<h1>Welcome#index</h1>
+
+<% if user_signed_in? %>
+
+  <%= current_user.first_name %>
+  <%= current_user.last_name %>
+
+<% if current_user.admin? %>
+  <%= "hello"%>
+
+  <% end %>
+<% end %>

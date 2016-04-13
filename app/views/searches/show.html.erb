@@ -1,0 +1,12 @@
+<h1>Search results</h1>
+<p><%= link_to "back", new_search_path %> </p>
+<% if @search.search_devices.empty? %>
+	<p>No results found </p>
+<% else %>
+	<% @search.search_devices.each do |c|  %>
+<li> <%= c.device_name + " | " + c.device_type %>
+	<%= link_to "edit", edit_device_path(c) %>
+	<%= link_to "show",device_path(c) %>
+	</li>
+<% end %>
+<% end %>
