@@ -1,12 +1,19 @@
-<h1>Welcome#index</h1>
-
 <% if user_signed_in? %>
+<h1>Welcome <span style="color:red;"><%= current_user.full_name %></span>
 
-  <%= current_user.first_name %>
-  <%= current_user.last_name %>
+  </h1>
+  <h4>Please find the instructions on how to use this system below</h4>
 
 <% if current_user.admin? %>
-  <%= "hello"%>
-
+  <%= "hello You can see this if you are an admin"%>
+  <p style="color:purple"><b>Things to do:
+    <li style="color:purple">New user from admin account</li>
+    <li style="color:purple">Notification system</li>
+    <li style="color:purple">Delete user</li>
+    <li style="color:purple">Search users</li>
+    <li style="color:purple">Better way of showing only to admin</li>
+    <li style="color:purple">Disable sign up</li>
+    <li style="color:purple">Overall look</li></b>
+  </p>
   <% end %>
 <% end %>

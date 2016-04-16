@@ -6,4 +6,7 @@ class Device < ActiveRecord::Base
   	validates :device_model, presence: {message:"Device Model is missing"}
   belongs_to :user
 
+  def reaching_end
+    
   end
+end

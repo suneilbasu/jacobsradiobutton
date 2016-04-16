@@ -25,7 +25,7 @@
       <td><%=u.select(:role,[['admin'],['user']]) %></td>
     </tr>
     <tr>
-      <td><%= link_to('Delete this record', @devices,
+      <td><%= link_to('Delete this record', @users,
                    { :confirm => 'Are you sure?', :method => :delete }) %></td>
       <td style="text-align:right"><%=u.submit "Change" %></td>
     </tr>

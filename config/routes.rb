@@ -2,18 +2,18 @@
 Rails.application.routes.draw do
 devise_for :users, :controllers => { registrations: 'registrations' }
   get 'welcome/index'
-  get 'calendar_page/index'
-  get 'users/index'
+  get 'calendar_page/index' 
+  get 'users/index' => 'users#index', as: :index_user
+  get 'users/new', to: 'users#new'
   get 'users/:id/edit', to: 'users#edit', as: :editing_user
   get 'users/show/:id', to: 'users#show'
-  get'users/edit/:id' => 'products#destroy', :via => :delete
+  get'users/edit/:id' => 'products#destroy', :via => :delete_user
 
   get 'devices/new', to: 'devices#new'
   get 'devices/index' => 'devices#index', as: :index
-  get 'devices/:id/edit', to: 'devices#edit', as: :editing
+  get 'devices/:id/edit', to: 'devices#edit', as: :editing_device
   get 'devices/show/:id', to: 'devices#show'
   get'devices/edit/:id' => 'products#destroy', :via => :delete
-  get 'users/edit_password'
   resources :searches
   resources :devices
   resources :users

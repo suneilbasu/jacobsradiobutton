@@ -1,7 +1,6 @@
-<h1>devices#index</h1>
-<%=link_to 'New Device',('../devices/new')%>
-<p>Find me in app/views/devices/index.html.erb</p>
-<%= link_to "Advanced Search", new_search_path %>
+<h1>Showing All Devices</h1>
+<h3><%=link_to 'New Device',('../devices/new')%></h3>
+<h4><%= link_to "Advanced Search", new_search_path %></h4>
 <%= "📱"%> <%="💻"%> <%="⌨"%> <%="🖥" %>
 
 <table class="table1" >
@@ -19,4 +18,5 @@
 	<td><%= link_to "Edit ", edit_device_path(n) %></td>
 </tr>
 <% end %>
+
 </table>

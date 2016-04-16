@@ -3,10 +3,20 @@
 <% if @search.search_devices.empty? %>
 	<p>No results found </p>
 <% else %>
-	<% @search.search_devices.each do |c|  %>
-<li> <%= c.device_name + " | " + c.device_type %>
-	<%= link_to "edit", edit_device_path(c) %>
-	<%= link_to "show",device_path(c) %>
-	</li>
+
+<table class="table1" >
+	<tr>
+		<th>Device Name  </th>
+		<th>Device Owner</th>
+		<th>Device Type  </th>
+		<th>Edit  </th>
+	</tr>
+		<% @search.search_devices.each do |c|  %>
+	<td><%= link_to "#{c.device_name}",device_path(c) %> </td>
+	<td><%= link_to "#{c.user.first_name}",user_path(c.user_id) %></td>
+	<td><%= link_to "#{c.device_type}",device_path(c) %> </td>
+	<td><%= link_to "Edit ", edit_device_path(c) %></td>
+</tr>
 <% end %>
+</table>
 <% end %>

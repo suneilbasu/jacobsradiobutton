@@ -1,16 +1,15 @@
 
 
 <% if user_signed_in? %>
-<ul class="nav navbar-nav"> <li class="active"><a href="../welcome/index.html">Home</a></li>
+<ul class="nav navbar-nav"> <li class="active"><%= link_to 'Home', welcome_index_path %></li>
 </ul>
-<li><%= link_to 'Users',('../users/index')%></li>
-  <li><%= link_to 'Devices',('../devices')
-  %></li>
+<li><%= link_to 'Users', users_path%></li>
+  <li><%= link_to 'Devices',devices_path %></li>
 
-  <li><%=link_to 'Calendar',('../calendar_page/index')%></li>
+  <li><%=link_to 'Calendar',calendar_page_index_path%></li>
 <% end %>
 <% if user_signed_in? %>
-  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
+  <li><%= link_to 'Edit Account', edit_user_registration_path %></li>
   <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
 <% else %>
 <li><%= link_to 'Sign in', new_user_session_path %></li>
