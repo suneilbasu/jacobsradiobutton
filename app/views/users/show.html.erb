@@ -33,3 +33,18 @@
     <br><%= link_to "edit this record", edit_user_path(@user) %>
 
   <br>  <%= "This user has the following devices"%>
+  <table class="table1" >
+  	<tr>
+  		<th>Device Name  </th>
+  		<th>Device Type  </th>
+  		<th>Edit  </th>
+
+  	</tr>
+  <% @devices.each do |n| %>
+  	<td><%= link_to "#{n.device_name}",device_path(n) %> </td>
+  	<td><%= link_to "#{n.device_type}",device_path(n) %> </td>
+  	<td><%= link_to "Edit ", edit_device_path(n) %></td>
+  </tr>
+  <% end %>
+
+  </table>

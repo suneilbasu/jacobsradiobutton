@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   enum role: [:user, :admin]
   after_initialize :set_default_role, :if => :new_record?
-  has_many :refreshes
+  has_many :devices
 
   def set_default_role
   end
