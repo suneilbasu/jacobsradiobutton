@@ -2,21 +2,26 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
     def index
     	@users = User.all
+      authorize User
     end
     def show
+      authorize User
     	@user = User.find(params[:id])
         @devices = @user.devices
     end
     def edit
+      authorize User
     	@user = User.find(params[:id])
     end
     def update
+      authorize User
     	@user = User.find(params[:id])
     	if @user.update(user_params)
     		redirect_to :action => 'index'
     	end
     end
     def destroy
+      authorize User
     	User.find(params[:id]).destroy
     	redirect_to :action =>'index'
     end
