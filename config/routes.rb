@@ -2,7 +2,7 @@
 Rails.application.routes.draw do
 devise_for :users, :controllers => { registrations: 'registrations' }
   get 'welcome/index'
-  get 'calendar_page/index' 
+  get 'calendar_page/index'
   get 'users/index' => 'users#index', as: :index_user
   get 'users/new', to: 'users#new'
   get 'users/:id/edit', to: 'users#edit', as: :editing_user
@@ -16,7 +16,8 @@ devise_for :users, :controllers => { registrations: 'registrations' }
   get'devices/edit/:id' => 'products#destroy', :via => :delete
   resources :searches
   resources :devices
-  resources :users
+  resources :users, except: :create
+  post 'create_user' => 'users#create', as: :create_user
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

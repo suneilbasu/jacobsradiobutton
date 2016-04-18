@@ -1,4 +1,10 @@
 class User < ActiveRecord::Base
+  validates :first_name, presence: {message:" is missing"}
+  validates :last_name, presence: {message:" is missing"}
+  validates :office_location, presence: {message:" is missing"}
+  validates :role, presence: {message:" is missing"}
+
+
   enum role: [:user, :admin]
   after_initialize :set_default_role, :if => :new_record?
   has_many :devices

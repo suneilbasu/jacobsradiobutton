@@ -30,10 +30,12 @@ class UsersController < ApplicationController
     end
 
     def create
-    @users = User.new(user_params)
+      authorize User
+    @users = User.new(sign_up_params)
    if @users.save
-      flash[:notice]="Correct"
+      flash[:notice]="Successfully Created New User"
     redirect_to :action =>'index'
+
   else
       flash[:title]=@users.errors.full_messages.to_sentence
       render(:action=>'new')
@@ -43,5 +45,8 @@ class UsersController < ApplicationController
   private
     def user_params
       params.require(:user).permit(:email,:first_name,:last_name,:role,:office_location)
+  end
+  def sign_up_params
+    params.require(:user).permit(:first_name,:office_location ,:last_name, :email, :password, :password_confirmation)
   end
   end

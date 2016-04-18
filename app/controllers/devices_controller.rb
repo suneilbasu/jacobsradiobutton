@@ -10,6 +10,7 @@ before_action :authenticate_user!
   def edit
     authorize Device
   	@devices = Device.find(params[:id])
+    flash[:notice]="Successfully Changed"
   end
   def update
     authorize Device
@@ -31,7 +32,7 @@ before_action :authenticate_user!
     authorize Device
   @devices = Device.new(device_params)
  if @devices.save
-    flash[:notice]="Correct"
+    flash[:notice]="Successfully Created New User"
   redirect_to :action =>'index'
 else
     flash[:title]=@devices.errors.full_messages.to_sentence

@@ -1,12 +1,14 @@
 class Device < ActiveRecord::Base
-  	validates :expiry_date, presence: {message:"Expiry Date is missing"}
-  	validates :start_date, presence: {message:"Start Date is missing"}
-  	validates :device_name, presence: {message:"Device Name is missing"}
-  	validates :device_type, presence: {message:"Device Type is missing"}
-  	validates :device_model, presence: {message:"Device Model is missing"}
+  	validates :expiry_date, presence: {message:"is missing"}
+  	validates :start_date, presence: {message:" is missing"}
+  	validates :device_name, presence: {message:" is missing"}
+  	validates :device_type, presence: {message:" is missing"}
+  	validates :device_model, presence: {message:" is missing"}
+    validates :device_cost, presence: {message:" is missing"}
+    validates :device_manufacturer, presence: {message:" is missing"}
   belongs_to :user
 
   def reaching_end
-    
+
   end
 end

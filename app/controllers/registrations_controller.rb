@@ -1,5 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
-
+	def new
+		redirect_to(new_user_session_path)
+	end
 	private
 
   def sign_up_params

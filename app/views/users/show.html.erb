@@ -1,4 +1,4 @@
-<h1>Showing Account for <%=@user.first_name %><%=@user.last_name %> </h1>
+<h1>Showing Account for <%=@user.full_name %> </h1>
 <table class="table2" >
   <tbody>
     <tr>
@@ -30,9 +30,9 @@
       <td><%=@user.updated_at %></td>
     </tr>
 </table>
-    <br><%= link_to "edit this record", edit_user_path(@user) %>
+    <br><%= link_to "Edit this record", edit_user_path(@user) %>
 
-  <br>  <%= "This user has the following devices"%>
+  <br><br>  <b><%= "This user has the following devices"%></b>
   <table class="table1" >
   	<tr>
   		<th>Device Name  </th>
