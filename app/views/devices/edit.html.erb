@@ -1,7 +1,6 @@
 <h1>Editing <%=@devices.device_name %> </h1>
 <%= link_to "Back to Devices",devices_path %>
 
-<h1>Editing <%=@devices.device_name %> </h1>
 
 <%= form_for @devices do |f| %>
 <table class="table_edit" >
@@ -37,8 +36,7 @@
       <td><%=f.text_field :expiry_date,"data-provide"=>'datepicker'%></td>
     </tr>
     <tr>
-      <td><%= link_to('Delete this record', @devices,
-                   { :confirm => 'Are you sure?', :method => :delete }) %></td>
+      <td><%= link_to('Delete this record',@devices, data: { confirm: "Are you sure? This cannot be undone?" }, method: :delete ) %></td>
       <td style="text-align:right"><%=f.submit "Change" %></td>
     </tr>
     <tr>

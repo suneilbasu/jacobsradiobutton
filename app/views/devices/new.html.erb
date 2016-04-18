@@ -23,12 +23,12 @@
       <td><%=f.number_field :device_cost %></td>
     </tr>
     <td><b>Registered user:</b></td>
-          <td><%= f.collection_select :user_id, User.all, :id, :user_id_name  %></td>
+          <td><%= f.collection_select :user_id, User.all, :id, :user_id_name,  :include_blank => "--Please Select Option--"  %></td>
     <tr>
       <td><b>Start date of Device:</b></td>
       <td><%=f.text_field :start_date,"data-provide"=>'datepicker'%></td>
     </tr>
-    <tr> 
+    <tr>
       <td><b>Expiry date of Device:</b></td>
       <td><%=f.text_field :expiry_date,"data-provide"=>'datepicker'%></td>
     </tr>

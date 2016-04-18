@@ -22,13 +22,13 @@
     </tr>
     <tr>
       <td><b>Role of user:</b></td>
-      <td><%=u.select(:role,[['admin'],['user']]) %></td>
+      <td><%=u.select(:role,[['user'],['admin']]) %></td>
     </tr>
     <tr>
-      <td><%= link_to('Delete this record', @users,
-                   { :confirm => 'Are you sure?', :method => :delete }) %></td>
+      <td><%= link_to('Delete this record',@users, data: { confirm: "Are you sure? This cannot be undone?" }, method: :delete ) %></td>
       <td style="text-align:right"><%=u.submit "Change" %></td>
     </tr>
       </tbody>
 </table>
+
 <% end %>

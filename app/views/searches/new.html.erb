@@ -9,11 +9,11 @@
     </tr>
 		<tr>
       <td><b>Type of Device:</b></td>
-      <td><%=s.select :device_type, options_for_select(@device_type), :include_blank => true %></td>
+      <td><%=s.select :device_type, options_for_select(@device_type), :include_blank => "--Please Select Option--" %></td>
     </tr>
 		<tr>
       <td><b>Manufacturer of Device:</b></td>
-      <td><%=s.select :device_manufacturer, options_for_select(@device_manufacturer), :include_blank => true %></td>
+      <td><%=s.select :device_manufacturer, options_for_select(@device_manufacturer), :include_blank => "--Please Select Option--" %></td>
     </tr>
 		<tr>
       <td><b>Model of Device:</b></td>

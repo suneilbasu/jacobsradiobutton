@@ -10,13 +10,13 @@ before_action :authenticate_user!
   def edit
     authorize Device
   	@devices = Device.find(params[:id])
-    flash[:notice]="Successfully Changed"
   end
   def update
     authorize Device
   	@devices = Device.find(params[:id])
   	if @devices.update(device_params)
   		redirect_to :action => 'index'
+      flash[:notice]="Successfully Changed"
   	end
   end
   def destroy

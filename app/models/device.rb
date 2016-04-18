@@ -6,6 +6,8 @@ class Device < ActiveRecord::Base
   	validates :device_model, presence: {message:" is missing"}
     validates :device_cost, presence: {message:" is missing"}
     validates :device_manufacturer, presence: {message:" is missing"}
+    validates :user_id, presence: {message:" is missing"}
+
   belongs_to :user
 
   def reaching_end
