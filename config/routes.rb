@@ -7,7 +7,7 @@ devise_for :users, :controllers => { registrations: 'registrations' }
   get 'users/new', to: 'users#new'
   get 'users/:id/edit', to: 'users#edit', as: :editing_user
   get 'users/show/:id', to: 'users#show'
-  get'users/edit/:id' => 'products#destroy', :via => :delete_user
+  match 'users/:id' => 'users#destroy', :via => :delete, :as => :destroy_user
 
   get 'devices/new', to: 'devices#new'
   get 'devices/index' => 'devices#index', as: :index

@@ -21,10 +21,13 @@ class UsersController < ApplicationController
     	end
     end
     def destroy
-      authorize User
-    	User.find(params[:id]).destroy
-    	redirect_to :action =>'index'
-    end
+    authorize User
+     @user = User.find(params[:id])
+     @user.destroy
+     if @user.destroy
+         redirect_to :action => 'index', notice: "User deleted."
+     end
+   end
     def user_params
     	params.require(:user).permit(:email,:first_name,:last_name,:role,:office_location)
     end

@@ -25,7 +25,7 @@
       <td><%=u.select(:role,[['user'],['admin']]) %></td>
     </tr>
     <tr>
-      <td><%= link_to('Delete this record',@users, data: { confirm: "Are you sure? This cannot be undone?" }, method: :delete ) %></td>
+      <td><%= link_to "Delete User", destroy_user_path(@user), method: :delete, data: { confirm: "Are you sure? This cannot be undone?" } %></td>
       <td style="text-align:right"><%=u.submit "Change" %></td>
     </tr>
       </tbody>

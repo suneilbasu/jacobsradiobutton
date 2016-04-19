@@ -13,5 +13,23 @@
     <li style="color:purple">Overall look</li>
     <li style="color:purple">Other styled tables</li></b>
   </p>
+
+<h3>The following users have requested an upgrade:</h3>
+  <table class="table1" >
+  	<tr>
+  		<th>Device Name  </th>
+  		<th>Device Owner  </th>
+  		<th>Device Type  </th>
+  		<th>Edit  </th>
+
+  	</tr>
+  <% @devices.each do |n| %>
+  	<td><%= link_to "#{n.device_name}",device_path(n) %> </td>
+  <td><%= link_to "#{n.user.first_name}",user_path(n.user_id) %></td>
+  	<td><%= link_to "#{n.device_type}",device_path(n) %> </td>
+  	<td><%= link_to "Edit ", edit_device_path(n) %></td>
+  </tr>
+  <% end %>
+  </table>
   <% end %>
 <% end %>
