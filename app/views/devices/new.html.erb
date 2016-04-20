@@ -1,4 +1,7 @@
 <h1>New Device</h1>
+<%current_user.admin? %>
+  <%= "admin"%>
+
 <%= form_for :device, url: devices_path do |f| %>
 <table class="table_edit" >
   <tbody>
