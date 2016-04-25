@@ -14,6 +14,11 @@ before_action :authenticate_user!
       @devices = Device.where(user_id: current_user.id).find(params[:id])
     end
   end
+
+
+
+
+
   def edit
     authorize Device
   	@devices = Device.find(params[:id])
@@ -50,6 +55,6 @@ end
 private
   def Device_params
     authorize Device
-    params.require(:device).permit(:device_name,:device_type,:device_manufacturer,:device_model,:user_id,:start_date,:expiry_date, :device_cost)
+    params.require(:device).permit(:device_name,:device_type,:device_manufacturer,:device_model,:user_id,:start_date,:expiry_date, :device_cost, :upgrade_request)
 end
 end
