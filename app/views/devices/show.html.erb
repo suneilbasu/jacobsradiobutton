@@ -61,6 +61,18 @@
                <td><b>The Cost to Upgrade Today:</b></td>
                <td><%=  number_to_currency(upgrade_cost,:unit => "£") %></td>
              </tr>
+
+             <tr>
+               <td><b>Upgrade:</b></td>
+
+               <td><%=  form_for(@devices) do |f|%>
+                 <%= f.check_box :upgrade_request %>
+                 <%= f.submit "+" %>
+                 <% end %>
+               </td>
+
+             </tr>
+
              <tr>
                <td></td>
                <td style="text-align:right"><%= link_to "Edit this record", edit_device_path(@devices) %>
@@ -110,13 +122,9 @@
            <tr>
              <td></td>
              <td style="text-align:right"> </td>
+
+            <%= @devices.upgrade_request  %>
           </tr>
        </tbody>
  </table>
-
- <% end %>
-
- radio
- <%= form_for @devices do |f| %>
-   <%= f.submit %>
  <% end %>
