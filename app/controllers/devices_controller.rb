@@ -38,7 +38,7 @@ before_action :authenticate_user!
   end
   def device_params
     authorize Device
-  	params.require(:device).permit(:device_name,:device_manufacturer,:device_type,:device_model,:user_id,:start_date,:expiry_date,:device_cost)
+  	params.require(:device).permit(:device_name,:device_manufacturer,:device_type,:device_model,:user_id,:start_date,:expiry_date,:device_cost, :upgrade_request)
   end
   def create
     authorize Device
